@@ -22,6 +22,9 @@ namespace Coffee.UIExtensions
         //################################
         // Serialize Members.
         //################################
+        [Tooltip("Unmask area image.")]
+        [SerializeField] private Image m_UnmaskImage;
+
         [Tooltip("Fit graphic's transform to target transform.")]
         [SerializeField] private RectTransform m_FitTarget;
 
@@ -145,6 +148,13 @@ namespace Coffee.UIExtensions
         /// <param name="target">Target transform.</param>
         public void FitTo(RectTransform target)
         {
+            var targetImage = target.GetComponent<Image>();
+
+            if (targetImage != null)
+            {
+                m_UnmaskImage.sprite = targetImage.sprite;
+            }
+
             var rt = transform as RectTransform;
 
             rt.pivot = target.pivot;

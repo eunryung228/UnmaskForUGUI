@@ -150,9 +150,10 @@ namespace Coffee.UIExtensions
         {
             var targetImage = target.GetComponent<Image>();
 
-            if (targetImage != null)
+            if (targetImage != null && targetImage.sprite != null)
             {
                 m_UnmaskImage.sprite = targetImage.sprite;
+                m_UnmaskImage.material = null;
             }
 
             var rt = transform as RectTransform;

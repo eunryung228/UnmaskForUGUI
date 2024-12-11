@@ -156,7 +156,7 @@ namespace Coffee.UIExtensions
 
             var s1 = target.lossyScale;
             var s2 = rt.parent.lossyScale;
-            rt.localScale = new Vector3(s1.x / s2.x, s1.y / s2.y, s1.z / s2.z);
+            rt.localScale = Vector3.one * 1.1f;
             rt.sizeDelta = target.rect.size;
             rt.anchorMax = rt.anchorMin = s_Center;
         }

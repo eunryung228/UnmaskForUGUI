@@ -148,14 +148,6 @@ namespace Coffee.UIExtensions
         /// <param name="target">Target transform.</param>
         public void FitTo(RectTransform target)
         {
-            var targetImage = target.GetComponent<Image>();
-
-            if (targetImage != null && targetImage.sprite != null)
-            {
-                m_UnmaskImage.sprite = targetImage.sprite;
-                m_UnmaskImage.material = null;
-            }
-
             var rt = transform as RectTransform;
 
             rt.pivot = target.pivot;

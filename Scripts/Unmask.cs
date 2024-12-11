@@ -150,10 +150,6 @@ namespace Coffee.UIExtensions
         {
             var rt = transform as RectTransform;
 
-            rt.pivot = target.pivot;
-            rt.position = target.position;
-            rt.rotation = target.rotation;
-
             var s1 = target.lossyScale;
             var s2 = rt.parent.lossyScale;
             rt.localScale = Vector3.one * 1.1f;
